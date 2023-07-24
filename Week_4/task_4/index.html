@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>File Path Processor</title>
+</head>
+
+<body>
+  <h1>File Path Processor</h1>
+  <form id="fileForm">
+    <label for="filePath">Enter a file path:</label>
+    <input type="text" id="filePath" name="filePath" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+    document.getElementById('fileForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const filePath = document.getElementById('filePath').value;
+      fetch(`/process?filePath=${encodeURIComponent(filePath)}`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('output').innerHTML = `
+            <p>Directory Name: ${data.dirname}</p>
+            <p>Base Name: ${data.basename}</p>
+            <p>${data.message}</p>
+          `;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('output').innerHTML = '<p>An error occurred. Please try again.</p>';
+        });
+    });
+  </script>
+</body>
+
+</html>
