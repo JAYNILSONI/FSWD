@@ -1,0 +1,16 @@
+/* App.css */
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.light {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.dark {
+  background-color: #333;
+  color: #f2f2f2;
+}
+

@@ -1,0 +1,7 @@
+.weather-box {
+  border: 2px solid #333; /* Add a border around the box */
+  padding: 20px; /* Add padding to create space between the content and the border */
+  width: 300px; /* Set the width of the box */
+  margin: 0 auto; /* Center the box horizontally */
+  text-align: center; /* Center the text within the box */
+}
